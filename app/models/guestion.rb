@@ -1,2 +1,0 @@
-class Guestion < ApplicationRecord
-end
