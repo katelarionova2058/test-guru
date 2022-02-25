@@ -1,0 +1,2 @@
+class Guestion < ApplicationRecord
+end
