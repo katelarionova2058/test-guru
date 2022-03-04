@@ -1,0 +1,3 @@
+class AddIndexToTest < ApplicationRecord
+
+end
