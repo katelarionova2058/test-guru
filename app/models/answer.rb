@@ -1,7 +1,7 @@
 class Answer < ApplicationRecord
   belongs_to :question
 
-  validate :val_num_of_answers
+  validate :val_num_of_answers, on: :create
 
   scope :correct, -> { where(correct: true) }
 

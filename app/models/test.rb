@@ -14,12 +14,10 @@ class Test < ApplicationRecord
                     uniqueness: { scope: :level }
   validates :level, numericality: { only_integer: true, greater_than_or_equal_to: 0 }
 
+  scope :by_category_title, -> (title) {  joins(:category).where(categories: { title: title }) }
+
   def self.find_by_category(title)
-  joins(:category)
-  .where(categories: { title: title })
-  .order(title: :desc)
-  .pluck(:title)
+    by_category_title(title).pluck(:title)
 end
 
-  scope :by_category_title, -> (title) {  joins(:category).where(categories: { title: title }) }
 end
